@@ -20,5 +20,20 @@ export const FAQ = [
   { q: "Collectez-vous des données sur mes joueurs ?", a: "Non. Vous décrivez un groupe, pas des enfants identifiés." },
 ] as const;
 
+export const MARQUEE = ["Séances chronométrées", "Exercices animés", "Partage par lien", "Hors connexion", "Français · العربية · English", "Bibliothèque personnelle", "Brouillon IA relu par vous", "Catégories U6 → U19", "Aucune donnée sur les joueurs"] as const;
+
+export const PROBLEMS = [
+  { title: "Les soirées de préparation", items: ["Séances recopiées à la main", "Schémas difficiles à expliquer", "Adjoints qui n'ont pas le plan"] },
+  { title: "Des exercices introuvables", items: ["Vidéos perdues dans les groupes", "Documents éparpillés", "Rien d'adapté à votre effectif"] },
+  { title: "Le terrain, sans réseau", items: ["Connexion faible au stade", "Applications lourdes à installer", "Plan impossible à rouvrir"] },
+  { title: "Une qualité qui varie", items: ["Chaque coach sa méthode", "Peu de repères partagés", "Progression difficile à suivre"] },
+] as const;
+
+export const AUDIENCES = [
+  { tag: "Coachs", title: "Entraîneurs", text: "Préparez une séance complète en quelques secondes, ajustez-la et emportez-la hors connexion sur le terrain.", roles: ["U6 → U19", "Seniors", "Bénévoles"] },
+  { tag: "Staff", title: "Adjoints & préparateurs", text: "Recevez l'exercice par lien WhatsApp, voyez-le en animation et comprenez le plan en dix secondes.", roles: ["Adjoints", "Gardiens", "Préparateurs"] },
+  { tag: "Académies", title: "Directeurs techniques", text: "Une base commune d'exercices relus par un entraîneur nommé, pour une méthode cohérente d'une équipe à l'autre.", roles: ["Directeur technique", "Responsable formation", "Coordinateur"] },
+] as const;
+
 /** Where the app lives. The sign-in link points here. */
 export const APP_URL = (process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3100").replace(/\/$/, "");

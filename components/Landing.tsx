@@ -1,5 +1,5 @@
 import { IconArrow, IconBall, IconCheck, IconClock, IconGlobe, IconLink, IconPlay, IconShield, IconTimer, IconWifi } from "./Icons";
-import { APP_URL, FAQ, STEPS, STRIP } from "./content";
+import { APP_URL, AUDIENCES, FAQ, MARQUEE, PROBLEMS, STEPS, STRIP } from "./content";
 import { PhoneDemo } from "./PhoneDemo";
 import { Reveal } from "./Reveal";
 import { WaitlistForm } from "./WaitlistForm";
@@ -21,7 +21,7 @@ export function Landing() {
       <nav>
         <div className="wrap">
           <a className="logo" href="#top" aria-label="Coach Me"><i><IconBall /></i>Coach Me</a>
-          <div className="links"><a href="#fonctions">Fonctions</a><a href="#comment">Comment ça marche</a><a href="#faq">FAQ</a></div>
+          <div className="links"><a href="#probleme">Constat</a><a href="#fonctions">Fonctions</a><a href="#comment">Comment ça marche</a><a href="#faq">FAQ</a></div>
           <div className="actions">
             <a className="signin" href={`${APP_URL}/login`}>Se connecter</a>
             <a className="btn gold sm" href="#acces">Accès anticipé</a>
@@ -30,8 +30,8 @@ export function Landing() {
       </nav>
 
       <header className="hero">
-        <div className="glow" style={{ width: 520, height: 520, background: "#1f7a43", top: -120, left: -160 }} />
-        <div className="glow" style={{ width: 420, height: 420, background: "#b8860b", top: 120, right: -120, opacity: 0.28 }} />
+        <div className="glow" style={{ width: 520, height: 520, background: "#cdfc55", top: -120, left: -160, opacity: 0.16 }} />
+        <div className="glow" style={{ width: 420, height: 420, background: "#5b6bd6", top: 120, right: -120, opacity: 0.3 }} />
         <div className="wrap">
           <div className="grid">
             <div>
@@ -62,13 +62,36 @@ export function Landing() {
         </div>
       </header>
 
-      <section style={{ paddingTop: 0, paddingBottom: 40 }}>
+      <div className="marquee" aria-hidden="true">
+        <div className="track">{[...MARQUEE, ...MARQUEE].map((m, i) => <span key={i}>{m}</span>)}</div>
+      </div>
+
+      <section style={{ paddingTop: 60, paddingBottom: 40 }}>
         <div className="wrap">
           <Reveal className="strip">
             {STRIP.map((s) => (
               <div key={s.value}><b>{s.value}</b><span>{s.label}</span></div>
             ))}
           </Reveal>
+        </div>
+      </section>
+
+      <section id="probleme">
+        <div className="wrap">
+          <Reveal className="head">
+            <Eyebrow>Le constat</Eyebrow>
+            <h2>Entraîner, c&apos;est déjà assez de travail.</h2>
+            <p className="sub">Préparer, retrouver, partager : trop de temps part ailleurs que sur le terrain.</p>
+          </Reveal>
+          <div className="problems">
+            {PROBLEMS.map((p, i) => (
+              <Reveal key={p.title} className="problem" delay={i * 70}>
+                <span className="n" aria-hidden="true">{`0${i + 1}`}</span>
+                <h3>{p.title}</h3>
+                <ul>{p.items.map((it) => <li key={it}>{it}</li>)}</ul>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -136,10 +159,29 @@ export function Landing() {
         </div>
       </section>
 
+      <section id="pour-qui">
+        <div className="wrap">
+          <Reveal className="head">
+            <Eyebrow>Pour qui</Eyebrow>
+            <h2>Un outil pour chaque<br />rôle sur le banc.</h2>
+          </Reveal>
+          <div className="aud">
+            {AUDIENCES.map((a, i) => (
+              <Reveal key={a.title} className="aud-card" delay={i * 70}>
+                <span className="tag">{a.tag}</span>
+                <h3>{a.title}</h3>
+                <p>{a.text}</p>
+                <div className="roles">{a.roles.map((r) => <span key={r}>{r}</span>)}</div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section id="acces">
         <div className="wrap">
           <Reveal className="final">
-            <div className="glow" style={{ width: 380, height: 380, background: "#f2c230", top: -200, insetInlineStart: "50%", marginInlineStart: -190, opacity: 0.22 }} />
+            <div className="glow" style={{ width: 380, height: 380, background: "#cdfc55", top: -200, insetInlineStart: "50%", marginInlineStart: -190, opacity: 0.22 }} />
             <div className="inner">
               <Eyebrow>Accès anticipé</Eyebrow>
               <h2>Construisons-le<br />avec vous.</h2>
