@@ -191,3 +191,10 @@
 .lp details[open] summary { color: var(--l-gold); }
 .lp a { color: inherit; }
 .lp .btn.gold { color: #1c2036; }
+
+/* larger logo */
+.lp nav .wrap { height: 76px; }
+.lp .hero { margin-top: -76px; padding-top: 160px; }
+.lp .logo { font-size: 1.7rem; gap: 12px; }
+.lp .logo i { width: 44px; height: 44px; border-radius: 14px; }
+.lp .logo i svg { width: 26px; height: 26px; }
