@@ -1,0 +1,6 @@
+:root {
+  --f-display: var(--font-barlow-condensed), "Arial Narrow", Arial, sans-serif;
+  --f-body: var(--font-barlow), system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #07110b; font-family: var(--f-body); }
